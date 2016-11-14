@@ -3,6 +3,8 @@ fruits = ['apples', 'oranges', 'pears', 'apricots']
 change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
 # this first kind of for-loop goes through a list
+# for var "number" (to get the value from the list) in the list "the_count":
+# do this (print, etc. )
 for number in the_count:
     print "This is count %d" % number
 
