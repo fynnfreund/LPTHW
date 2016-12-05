@@ -4,7 +4,6 @@ from random import randint
 class Scene(object):
 
     def enter(self):
-        print "This scene is not yet configured. Subclass it and implement enter()."
         exit(1)
 
 
@@ -27,6 +26,9 @@ class Death(Scene):
 
     quips = [
         "You died. You really suck at this.",
+        "Your mum would be proud ... if she were smarter.",
+        "Such a savage.",
+        "I'm better than you, ha-ha."
     ]
 
     def enter(self):
