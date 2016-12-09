@@ -1,7 +1,7 @@
 from nose.tools import *
-import re
+import re # "regular expressions", freaky-nerdy tool
 
-#A useful function for asserting conditions in aan HTTP response
+#A useful function for asserting conditions in a HTTP response
 def assert_response(resp, contains=None, matches=None, headers=None, status=200, mime=None):
     assert_equal(status, resp.status_code)
 

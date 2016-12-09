@@ -16,7 +16,7 @@ def game_get():
 
 @app.route('/game', methods=['POST'])
 def game_post():
-    userinput = request.form.get('userinput')
+    userinput = request.form.get('userinput') # get data from the post request
     if 'scene' in session:
         if userinput is None:
             # Weird, a POST request to /game with no user input, what should the code do?
@@ -24,13 +24,18 @@ def game_post():
         else:
             currentscene = map.SCENES[session['scene']]
             nextscene = currentscene.go(userinput)
+
             if nextscene is None:
                 # there's no transition for that user input
                 # what shoud your code do in response?
-                return render_template('you_died.html')
+                tempvari = render_template('you_died.html')
+
             else:
                 session['scene'] = nextscene.urlname
-                return render_template('show_scene.html', scene=nextscene)
+                tempvari = render_template('show_scene.html', scene=nextscene)
+
+            return tempvari
+
     else:
         # there's no session, how could the user get here?
         # what should the code do in response?
@@ -40,7 +45,7 @@ def game_post():
 @app.route('/')
 def index():
      session['scene'] = map.START.urlname
-     return redirect(url_for('game_get')) # redirect the browser to the url for game_get
+     return redirect(url_for('game_get')) # redirect the browser to the url to our function: game_get
 
 app.secret_key = "blubb123456789"
 

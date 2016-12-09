@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block content %}
+{% block bodycontent %}
 {% if scene %}
   <h1> {{ scene.title }} </h1>
   <pre>{{ scene.description }}</pre>
@@ -9,7 +9,7 @@
   {% else %}
     <p>
       <form action="/game" method="POST">
-        What do you do? <input type="text" name="userinput"> <input type="SUBMIT">
+        What do you do? <input type="text" name="userinput"> <input type="SUBMIT"> <!--kind of like raw_input = -->
       </form>
     </p>
   {% endif %}
