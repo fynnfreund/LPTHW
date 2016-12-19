@@ -78,13 +78,19 @@ and then explode like a supernova, taking down the Gothon ship at the same time.
 You made it!
 """)
 
-the_end_loser = Scene("...", "the_end_loser",
+the_end_loser = Scene("You failed!", "the_end_loser",
 """
 You jump into a random pod and hit the eject button. The pod escapes into space
 but there's a crack in the hull. Uh oh. The pod implodes and you with it.
+What a shame!
 """)
 
 generic_death = Scene("Death ...", "death", "You died.")
+
+try_again = Scene("Nope, wrong answer!", "try_again",
+"""
+Come on, you can do better.
+""")
 
 #Define the action commands available in each Scene
 escape_pod.add_paths({
@@ -93,18 +99,18 @@ escape_pod.add_paths({
 })
 
 the_bridge.add_paths({
-    'throw the bomb': generic_death,
+    'throw the bomb': try_again,
     'slowly pace the bomb': escape_pod
 })
 
 laser_weapon_armory.add_paths({
     '132': the_bridge,
-    '*': generic_death
+    #'*': try_again
 })
 
 central_corridor.add_paths({
-    'shoot!': generic_death,
-    'dodge!': generic_death,
+    'shoot!': try_again,
+    'dodge!': try_again,
     'tell a joke': laser_weapon_armory
 })
 
@@ -116,6 +122,7 @@ SCENES = {
     escape_pod.urlname : escape_pod,
     the_end_winner.urlname : the_end_winner,
     the_end_loser.urlname : the_end_loser,
-    generic_death.urlname : generic_death
+    generic_death.urlname : generic_death,
+    try_again.urlname : try_again
 }
 START = central_corridor

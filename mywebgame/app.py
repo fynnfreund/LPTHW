@@ -10,7 +10,8 @@ def game_get():
         thescene = map.SCENES[session['scene']]
         return render_template('show_scene.html', scene=thescene)
     else:
-        # If no session - show start scene
+        # The user doesn't have a session ...
+        # what should you code do in response?
         return render_template('start.html')
 
 @app.route('/game', methods=['POST'])
