@@ -2,6 +2,7 @@
 
 {% block bodycontent %}
 {% if scene %}
+
   <h1> {{ scene.title }} </h1>
   <pre>{{ scene.description }}</pre>
   {% if scene.urlname == "try_again" %}
@@ -13,6 +14,7 @@
       </form>
     </p>
   {% endif %}
+
 {% else %}
   <p><a href="/">Start at the Beginning</a></p>
 {% endif %}

@@ -1,0 +1,36 @@
+body {
+    background-image: url('https://i1.wp.com/www.wallpapersbyte.com/wp-content/uploads/2015/06/London-City-Big-Ben-Bridge-River-Buildings-Top-View-BW-Black-And-White-WallpapersByte-com-1366x768.jpg');
+    background-color: grey;
+  }
+
+h1 {
+    background-image: url("/static/img/geometry2.png");
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    border: 1px solid black;
+    opacity: 0.7;
+    filter: alpha(opacity=50)
+}
+
+p, pre, form {
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 14px;
+}
+form {
+  font-size: 1.2em;
+}
+input, input:focus, input:active {
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border: none;
+}
+input:focus, input:hover {
+  background: #fff;
+}
+input[type="SUBMIT"] {
+  cursor: pointer;
+
+}

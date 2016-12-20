@@ -471,7 +471,8 @@ hint_3.add_paths({
 lodge_1097.add_paths({
     'heaven': ceiling,
     'up': ceiling,
-    'ceiling': ceiling
+    'ceiling': ceiling,
+    'help': hint_3
 })
 
 hint_2.add_paths({
